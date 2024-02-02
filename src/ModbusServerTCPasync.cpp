@@ -137,7 +137,7 @@ void ModbusServerTCPasync::mb_client::onData(uint8_t* data, size_t len) {
 }
 
 void ModbusServerTCPasync::mb_client::onPoll() {
-  LOCK_GUARD(lock1, obLock);
+  //LOCK_GUARD(lock1, obLock);
   handleOutbox();
   if (server->idle_timeout > 0 && 
       millis() - lastActiveTime > server->idle_timeout) {
